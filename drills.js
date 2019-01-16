@@ -132,3 +132,26 @@ ourData.forEach(element => {
   }
 });
 
+function decode(message) {
+  let letters = [];
+  let message_array = message.split(' ');
+  for (let i = 0; i < message_array.length; i++) {
+    if (message_array[i][0] === 'a') {
+      letters.push(message_array[i][1]);
+    }
+    else if (message_array[i][0] === 'b') {
+      letters.push(message_array[i][2]);
+    }
+    else if (message_array[i][0] === 'c') {
+      letters.push(message_array[i][3]);
+    }
+    else if (message_array[i][0] === 'd') {
+      letters.push(message_array[i][4]);
+    }
+    else {
+      letters.push(' ');
+    }
+  }
+  let result = letters.join('');
+  console.log(result);
+}
