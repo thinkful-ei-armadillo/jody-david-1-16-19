@@ -91,13 +91,14 @@ let bingo = {
   fum: 'people',
   quux: 'know',
   spam: 'this'
-}
-for (let key in bingo) {
-  console.log(`${key}: ${bingo[key]}`);
-}
+};
+// for (let key in bingo) {
+//   console.log(`${key}: ${bingo[key]}`);
+// }
 
+let ourObj = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+};
 
-
-
-
+console.log(`Pippin likes ${ourObj.meals[3]} best!`);
 
