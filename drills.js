@@ -102,3 +102,24 @@ let ourObj = {
 
 console.log(`Pippin likes ${ourObj.meals[3]} best!`);
 
+const ourData = [
+  {
+    name: 'Jody',
+    jobTitle: 'Developer'
+  },
+  {
+    name: 'David',
+    jobTitle: 'Astronaut'
+  },
+  {
+    name: 'Pippen',
+    jobTitle: 'Cook'
+  },
+  {
+    name: 'Meriadoc',
+    jobTitle: 'Clumsy'
+  }
+];
+ourData.forEach(element => console.log(`${element.name}: ${element.jobTitle}`));
+ 
+
