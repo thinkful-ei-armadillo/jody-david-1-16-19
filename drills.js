@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 'use strict';
+// eslint-disable-next-line no-debugger
 debugger;
 
 // function createMyObject(){
@@ -57,10 +58,9 @@ function enrollInSummerSchool(students) {
       name: element.name,
       status: 'In Summer school',
       course: element.course
-    }
-  })
+    };
+  });
 }
-
 
 function findById(items, idNum) {
   return items.find(element => element.id === idNum);
@@ -72,8 +72,16 @@ function validateKeys(object, expectedKeys) {
   } 
   for(let i = 0; i <expectedKeys.length; i++) {
     if (!Object.keys(object).find(element => element === expectedKeys[i]))
-    return false;
+      return false;
   }
   return true;
 }
+
+let loaf = {
+  flour: 300,
+  water: 210,
+  hydration: function(){
+    return this.water / this.flour * 100;
+  }
+};
 
