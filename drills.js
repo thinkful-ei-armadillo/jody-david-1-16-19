@@ -49,3 +49,13 @@ function keyDeleter(obj) {
 function makeStudentsReport(data) {
   return data.map(element => `${element.name}: ${element.grade}`);
 }
+
+function enrollInSummerSchool(students) {
+  return students.map(element => {
+    return {
+      name: element.name,
+      status: 'In Summer school',
+      course: element.course
+    }
+  })
+}
