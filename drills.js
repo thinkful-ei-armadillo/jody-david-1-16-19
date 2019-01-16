@@ -105,21 +105,30 @@ console.log(`Pippin likes ${ourObj.meals[3]} best!`);
 const ourData = [
   {
     name: 'Jody',
-    jobTitle: 'Developer'
+    jobTitle: 'Developer',
+    boss: 'Meriadoc'
   },
   {
     name: 'David',
-    jobTitle: 'Astronaut'
+    jobTitle: 'Astronaut',
+    boss: 'Meriadoc'
   },
   {
     name: 'Pippen',
-    jobTitle: 'Cook'
+    jobTitle: 'Cook',
+    boss: 'Meriadoc'
   },
   {
     name: 'Meriadoc',
     jobTitle: 'Clumsy'
-  }
+  },
 ];
-ourData.forEach(element => console.log(`${element.name}: ${element.jobTitle}`));
- 
+
+ourData.forEach(element => {
+  if (Object.keys(element).find(item => item === 'boss')){
+    console.log(`${element.jobTitle} ${element.name} reports to ${element.boss}.`);
+  } else{
+    console.log(`${element.jobTitle} ${element.name} doesn't report to anybody.`);
+  }
+});
 
