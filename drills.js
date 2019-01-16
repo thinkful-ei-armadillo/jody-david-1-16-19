@@ -85,3 +85,19 @@ let loaf = {
   }
 };
 
+let bingo = {
+  foo:'only',
+  bar:'smart',
+  fum: 'people',
+  quux: 'know',
+  spam: 'this'
+}
+for (let key in bingo) {
+  console.log(`${key}: ${bingo[key]}`);
+}
+
+
+
+
+
+
