@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 debugger;
 
@@ -60,6 +61,11 @@ function enrollInSummerSchool(students) {
   })
 }
 
+
+function findById(items, idNum) {
+  return items.find(element => element.id === idNum);
+}
+
 function validateKeys(object, expectedKeys) {
   if (Object.keys(object).length !== expectedKeys.length) {
     return false;
@@ -70,3 +76,4 @@ function validateKeys(object, expectedKeys) {
   }
   return true;
 }
+
