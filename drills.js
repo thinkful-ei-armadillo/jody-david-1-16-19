@@ -33,7 +33,19 @@ function personMaker() {
   return person;
 }
 
+const sampleObj = {
+  foo: 'foo',
+  bar: 'bar',
+  bizz: 'bizz',
+  bang: 'bang',
+};
+
+function keyDeleter(obj) {
+  delete obj.foo;
+  delete obj.bar;
+  return obj;
+}
+
 function makeStudentsReport(data) {
   return data.map(element => `${element.name}: ${element.grade}`);
 }
-
