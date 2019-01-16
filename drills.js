@@ -100,7 +100,7 @@ let ourObj = {
   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
 };
 
-console.log(`Pippin likes ${ourObj.meals[3]} best!`);
+// console.log(`Pippin likes ${ourObj.meals[3]} best!`);
 
 const ourData = [
   {
@@ -124,13 +124,13 @@ const ourData = [
   },
 ];
 
-ourData.forEach(element => {
-  if (Object.keys(element).find(item => item === 'boss')){
-    console.log(`${element.jobTitle} ${element.name} reports to ${element.boss}.`);
-  } else{
-    console.log(`${element.jobTitle} ${element.name} doesn't report to anybody.`);
-  }
-});
+// ourData.forEach(element => {
+//   if (Object.keys(element).find(item => item === 'boss')){
+//     console.log(`${element.jobTitle} ${element.name} reports to ${element.boss}.`);
+//   } else{
+//     console.log(`${element.jobTitle} ${element.name} doesn't report to anybody.`);
+//   }
+// });
 
 
 let cipher = {
@@ -153,4 +153,53 @@ function decoder(word) {
   }
 }
 
-console.log(decode('craft block argon meter bells brown croon droop'));
+// console.log(decode('craft block argon meter bells brown croon droop'));
+
+function createCharacter(charArray){
+  return {
+    name: charArray[0],
+    nickname: charArray[1],
+    race: charArray[2],
+    origin: charArray[3],
+    attack: charArray[4],
+    defense: charArray[5],
+    describe: function(){
+      console.log(`${this.name} is a ${this.race} from ${this.origin}.`);
+      return `${this.name} is a ${this.race} from ${this.origin}.`;
+    },
+    evaluateFight: function(character){
+      let damageTaken = calcDamage(character.attack, this.defense);
+      let damageDealt = calcDamage(this.attack, character.defense);
+      return `Your opponent takes ${damageDealt} damage and you receive ${damageTaken} damage.`;
+    }
+  };
+  function calcDamage(attack, defense) {
+    return defense > attack ? 0 : attack - defense;
+  }
+}
+
+let hobbitCharacters = [
+  ['Gandalf the White', 'gandalf', 'Wizard', 'Middle-Earth', 10, 6],
+  ['Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1],
+  ['Frodo Baggins', 'frodo', 'Hobbit', 'The Shrine', 3, 2],
+  ['Aragorn son of Arathon', 'aragorn', 'Man', 'Dunnedain', 6, 8],
+  ['Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5],
+  ['Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 10, 10]
+];
+
+let characters = [
+  createCharacter(hobbitCharacters[0]),
+  createCharacter(hobbitCharacters[1]),
+  createCharacter(hobbitCharacters[2]),
+  createCharacter(hobbitCharacters[3]),
+  createCharacter(hobbitCharacters[4]),
+  createCharacter(hobbitCharacters[5]),
+];
+characters.find(item => item.nickname === 'aragorn').describe();
+
+let hobbitArray = hobbitCharacters.filter(item => item.race === 'hobbit');
+
+let bigAttack = hobbitCharacters.filter(item => item.attack > 5);
+
+console.log(characters[2].evaluateFight(characters[5]));
+
