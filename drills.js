@@ -59,3 +59,14 @@ function enrollInSummerSchool(students) {
     }
   })
 }
+
+function validateKeys(object, expectedKeys) {
+  if (Object.keys(object).length !== expectedKeys.length) {
+    return false;
+  } 
+  for(let i = 0; i <expectedKeys.length; i++) {
+    if (!Object.keys(object).find(element => element === expectedKeys[i]))
+    return false;
+  }
+  return true;
+}
