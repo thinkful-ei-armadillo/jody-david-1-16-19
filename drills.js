@@ -85,4 +85,3 @@ let loaf = {
   }
 };
 
-let this = work;
