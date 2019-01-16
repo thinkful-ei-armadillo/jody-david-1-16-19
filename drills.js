@@ -33,3 +33,7 @@ function personMaker() {
   return person;
 }
 
+function makeStudentsReport(data) {
+  return data.map(element => `${element.name}: ${element.grade}`);
+}
+
