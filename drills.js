@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 debugger;
 
@@ -56,6 +57,11 @@ function enrollInSummerSchool(students) {
       name: element.name,
       status: 'In Summer school',
       course: element.course
-    }
-  })
+    };
+  });
 }
+
+function findById(items, idNum) {
+  return items.find(element => element.id === idNum);
+}
+
